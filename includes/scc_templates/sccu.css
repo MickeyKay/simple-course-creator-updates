@@ -1,0 +1,174 @@
+/**
+ * To edit, create a folder called "scc_templates" in the root of your theme 
+ * and COPY this file into it. It will override the plugin"s CSS file.
+ */
+
+
+/*------------------------------*\
+	$HELPERS
+\*------------------------------*/
+
+/* SPACERS */
+
+.sccu-mb-double:not(:last-child) {
+	margin-bottom: 50px;
+}
+
+.sccu-mb-single:not(:last-child) {
+	margin-bottom: 25px;
+}
+
+.sccu-mb-half:not(:last-child) {
+	margin-bottom: 13px;
+}
+
+.sccu-mb-third:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+
+/* ICONS */
+
+@font-face {
+	font-family: "sccu-icons";
+	src: url("../../assets/fonts/sccu-icons.eot?9503089");
+	src: url("../../assets/fonts/sccu-icons.eot?9503089#iefix") format("embedded-opentype"),
+		 url("../../assets/fonts/sccu-icons.woff?9503089") format("woff"),
+		 url("../../assets/fonts/sccu-icons.ttf?9503089") format("truetype"),
+		 url("../../assets/fonts/sccu-icons.svg?9503089#sccu-icons") format("svg");
+	font-style: normal;
+	font-weight: normal;
+}
+ 
+.sccu-icon:before {
+	display: inline-block;
+	font-family: "sccu-icons";
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1em;
+	speak: none;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	width: 1em;
+}
+ 
+.sccu-icon-comment:before { content: "\e801"; }
+
+.sccu-icon-clock:before { content: "\e800"; }
+
+
+
+
+
+/*------------------------------*\
+	$UPDATES
+\*------------------------------*/
+
+/* HEAD */
+
+.sccu-list-head {
+	border-left: 3px solid #ddd;
+}
+
+.sccu-head-updates {
+	border: 3px solid #ddd;
+	border-width: 3px 3px 3px 0;
+	border-radius: 0px 15px 15px 0;
+	color: #777;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 9px 15px 7px;
+	text-transform: uppercase;
+}
+
+
+
+
+
+/*------------------------------*\
+	$LIST
+\*------------------------------*/
+
+.sccu-list {
+	border-left: 3px solid #ddd;
+}
+
+.sccu-list-item {
+	margin-left: 25px;
+	padding-bottom: 25px;
+	padding-top: 25px;
+}
+
+.sccu-list-item:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+}
+
+
+/* DOTS */
+
+.sccu-list,
+.sccu-list-byline {
+	position: relative;
+}
+
+.sccu-list:after,
+.sccu-list-byline:before {
+	border: 2px solid #ccc;
+	border-radius: 50%;
+	content: " ";
+	display: inline-block;
+	height: 15px;
+	position: absolute;
+	width: 15px;
+}
+
+.sccu-list:after {
+	background-color: #ccc;
+	bottom: -15px;
+	left: -9px;
+}
+
+.sccu-list-byline:before {
+	background-color: #fff;
+	left: -34px;
+}
+
+.sccu-list-item:hover .sccu-list-byline:before {
+	border-color: #777;
+}
+
+
+/* BYLINE */
+
+.sccu-list-byline,
+.sccu-list-byline a {
+	border-bottom: none;
+	color: #777;
+	font-size: 13px;
+	line-height: 19px;
+	text-decoration: none;
+}
+
+.sccu-list-byline-item:not(:last-child):after {
+	content: "\007C";
+	margin-right: 10px;
+	padding-left: 10px;
+}
+
+.sccu-list-byline .sccu-icon {
+	color: #666;
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+
+/* EXCERPT */
+
+.sccu-list-excerpt {
+	font-size: 15px;
+	line-height: 23px;
+}
