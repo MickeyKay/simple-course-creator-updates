@@ -1,12 +1,15 @@
-<div class="sccu-updates">
+<div class="sccu-updates sccu-mb-double">
 
 	<?php
 	/**
-	 * To edit this templace, create a folder called "scc_templates" in the root of your
+	 * To edit this template, create a folder called "scc_templates" in the root of your
 	 * theme and COPY this file into it. It will override the plugin's template file.
 	 */
 
-	foreach ( get_terms( 'course' ) as $course ) :
+	$search = isset( $atts['course'] ) ? $atts['course'] : '';
+	$courses = get_terms( 'course', array( 'search' => $search ) );
+
+	foreach ( $courses as $course ) :
 		$array              = get_option( 'taxonomy_' . $course->term_id );
 		$post_list_title    = $array['post_list_title'];
 		$course_description = term_description( $course->term_id, 'course' );
@@ -16,8 +19,8 @@
 			'posts_per_page' => -1,
 			'orderby'        => 'post_date',
 			'order'          => 'DSC',
-			'taxonomy'       => $course->taxonomy,
-			'term'           => $course->slug
+			'taxonomy'       => 'course',
+			'term'           => ( isset( $atts['course'] ) ? $atts['course'] : $course->slug )
 		) );
 
 		$updates_count = count( $posts );
@@ -121,6 +124,28 @@
 
 		</div> <!-- end .sccu-update -->
 
+		<?php if ( isset( $atts['course'] ) ) break; ?>
+
 	<?php endforeach; ?>
+
+	<?php if ( !$courses ) : ?>
+	
+		<div class="sccu-update sccu-mb-double">
+	
+			<div class="sccu-list-head">
+				<span class="sccu-head-updates">No updates yet</span>
+			</div>
+	
+			<div class="sccu-list">
+				<div class="sccu-list-item">
+					<div class="sccu-list-byline sccu-mb-third">
+						Updates are coming &mdash; check back here soon.
+					</div>
+				</div>
+			</div>
+	
+		</div>
+
+	<?php endif; ?>
 
 </div>

@@ -55,6 +55,26 @@
 	$UPDATES
 \*------------------------------*/
 
+/*---------------*\
+	$LIST
+\*---------------*/
+
+.sccu-list {
+	border-left: 3px solid #ddd;
+	padding-bottom: 15px;
+}
+
+.sccu-list-item {
+	margin-left: 25px;
+	padding-bottom: 25px;
+	padding-top: 25px;
+}
+
+.sccu-list-item:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+}
+
+
 /* HEAD */
 
 .sccu-list-head {
@@ -72,26 +92,6 @@
 	line-height: 1;
 	padding: 9px 15px 7px;
 	text-transform: uppercase;
-}
-
-
-
-/*---------------*\
-	$LIST
-\*---------------*/
-
-.sccu-list {
-	border-left: 3px solid #ddd;
-}
-
-.sccu-list-item {
-	margin-left: 25px;
-	padding-bottom: 25px;
-	padding-top: 25px;
-}
-
-.sccu-list-item:not(:last-child) {
-	border-bottom: 1px solid #ddd;
 }
 
 
@@ -115,13 +115,13 @@
 
 .sccu-list:after {
 	background-color: #ccc;
-	bottom: -15px;
-	left: -9px;
+	bottom: 0;
+	left: -11px;
 }
 
 .sccu-list-byline:before {
 	background-color: #fff;
-	left: -34px;
+	left: -36px;
 }
 
 .sccu-list-item:hover .sccu-list-byline:before {
@@ -132,12 +132,17 @@
 /* BYLINE */
 
 .sccu-list-byline,
-.sccu-list-byline a {
+.sccu-list .sccu-list-byline a {
 	border-bottom: none;
 	color: #777;
 	font-size: 13px;
 	line-height: 19px;
 	text-decoration: none;
+}
+
+.sccu-list .sccu-list-byline a:hover,
+.sccu-list .sccu-list-byline a:hover .sccu-icon {
+	color: #999;
 }
 
 .sccu-list-byline-item:not(:last-child):after {
@@ -149,7 +154,7 @@
 .sccu-list-byline .sccu-icon {
 	color: #666;
 	font-size: 12px;
-	margin-right: 5px;
+	padding-right: 5px;
 }
 
 

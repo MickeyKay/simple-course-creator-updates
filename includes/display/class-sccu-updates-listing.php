@@ -21,7 +21,7 @@ class SCCU_Updates_Listing {
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_styles' ) );
 
 		// register shortcode
-		add_shortcode( 'sccu_updates', array( $this, 'shortcode' ) );
+		add_shortcode( 'scc_updates', array( $this, 'shortcode' ) );
 	}
 
 
@@ -51,7 +51,7 @@ class SCCU_Updates_Listing {
 		}
 
 		// register and enqueue the appropriate assets based on above checks
-		if ( has_shortcode( $post->post_content, 'sccu_updates' ) ) {
+		if ( has_shortcode( $post->post_content, 'scc_updates' ) ) {
 			wp_enqueue_style( 'sccu-updates', $primary_style );
 			wp_enqueue_style( 'sccu-updates-icons', SCCU_URL . 'assets/css/icons.css' );
 		}
@@ -103,10 +103,15 @@ class SCCU_Updates_Listing {
 	/**
 	 * register shortcode used to output updates template
 	 */
-	public function shortcode() {
+	public function shortcode( $atts ) {
+		extract( shortcode_atts( array(
+			'course' => '',
+			'intro'  => ''
+		), $atts ) );
+
 		ob_start();
 
-		$this->get_template( 'sccu-output.php' );
+		$this->get_template( 'sccu-output.php', array( 'atts' => $atts ) );
 
 		return ob_get_clean();
 	}
