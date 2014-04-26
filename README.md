@@ -73,6 +73,6 @@ You have complete customization control of not just the way SCC Updates looks, b
 
 ### About the Author
 ---
-I'm Alex, and I'm the guy behind [Kolakube](http://kolakube.com/). I've been creating WordPress themes and since I was 15, and started a couple of businesses along the way.
+I'm Alex, and I'm the guy behind [Kolakube](http://kolakube.com/). I've been creating WordPress themes and since I was 15, and started a couple of businesses along the way. [You should follow me on Twitter](http://twitter.com/afrais/).
 
 SCC Updates is my first free WordPress plugin, and I've love to know what you think! Feel free to [shoot me an email about it](http://kolakube.com/contact/), and even [donate](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=alex%40kolakube%2ecom&lc=US&item_name=Alex%20Mangini%2c%20Kolakube&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest) if you like it that much!
