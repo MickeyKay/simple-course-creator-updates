@@ -23,7 +23,7 @@ SCC Updates is a versatile plugin and can have many uses to keep your audience e
 * Theme/plugin developers can use it to document the progress of their work on their blog
 * Storytellers can break their stories down into parts, and keep their readers updated as new parts are released
 
-!(Simple Course Creator)[http://kolakube.com/wp-content/uploads/2014/04/scc-updates1.png]
+![Simple Course Creator](http://kolakube.com/wp-content/uploads/2014/04/scc-updates1.png)
 
 ### Usage
 ---
