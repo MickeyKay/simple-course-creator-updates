@@ -1,17 +1,22 @@
 <?php
 /**
  * Plugin Name: Simple Course Creator - Updates
- * Plugin URI: http://kolakube.com/scc-updates/
- * Description: Use SCC as a way to post updates in a timeline format.
+ * Plugin URI: http://kolakube.com/sccu-updates/
+ * Description: Use the SCC Updates addon to create a page that lists the newest posts from your courses in a timeline format.
  * Version: 1.0.0
  * Author: Alex Mangini
- * Author URI: http://alexmangini.com
+ * Author URI: http://kolakube.com/about/
+ * Author email: alex@kolakube.com
  * License: GPL2
  * Requires at least: 3.8
  * Tested up to: 3.8
  * Text Domain: sccu
  * Domain Path: /languages/
- * 
+ *
+ * This plugin requires Simple Course Creator for use, and much of
+ * the code / file structure in this plugin was taken from Simple
+ * Course Creator's core. 
+ *
  * This plugin is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as 
  * published by the Free Software Foundation.
@@ -33,11 +38,10 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // no accessing this file directly
 
 
-
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'simple-course-creator/simple-course-creator.php' ) ) :
 /**
- * primary class for Simple Course Creator Customizer
+ * primary class for Simple Course Creator Updates
  *
  * @since 1.0.0
  */
@@ -85,6 +89,7 @@ class Simple_Course_Creator_Updates {
 	 */
 	private function includes() {
 		require_once( SCCU_DIR . 'includes/display/class-sccu-updates-listing.php' );	// display updates listing
+		require_once( SCCU_DIR . 'includes/display/functions.php' );	// display functions
 	}
 }
 new Simple_Course_Creator_Updates();

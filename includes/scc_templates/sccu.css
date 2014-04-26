@@ -28,17 +28,6 @@
 
 
 /* ICONS */
-
-@font-face {
-	font-family: "sccu-icons";
-	src: url("../../assets/fonts/sccu-icons.eot?9503089");
-	src: url("../../assets/fonts/sccu-icons.eot?9503089#iefix") format("embedded-opentype"),
-		 url("../../assets/fonts/sccu-icons.woff?9503089") format("woff"),
-		 url("../../assets/fonts/sccu-icons.ttf?9503089") format("truetype"),
-		 url("../../assets/fonts/sccu-icons.svg?9503089#sccu-icons") format("svg");
-	font-style: normal;
-	font-weight: normal;
-}
  
 .sccu-icon:before {
 	display: inline-block;
@@ -87,11 +76,9 @@
 
 
 
-
-
-/*------------------------------*\
+/*---------------*\
 	$LIST
-\*------------------------------*/
+\*---------------*/
 
 .sccu-list {
 	border-left: 3px solid #ddd;

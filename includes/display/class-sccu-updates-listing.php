@@ -1,5 +1,14 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // no accessing this file directly
+
+
+/**
+ * outputs and loads all required resources for the
+ * updates listing.
+ *
+ * @since 1.0.0
+ */
 class SCCU_Updates_Listing {
 
 
@@ -42,8 +51,10 @@ class SCCU_Updates_Listing {
 		}
 
 		// register and enqueue the appropriate assets based on above checks
-		if ( has_shortcode( $post->post_content, 'sccu_updates' ) )
+		if ( has_shortcode( $post->post_content, 'sccu_updates' ) ) {
 			wp_enqueue_style( 'sccu-updates', $primary_style );
+			wp_enqueue_style( 'sccu-updates-icons', SCCU_URL . 'assets/css/icons.css' );
+		}
 	}
 
 
@@ -101,58 +112,3 @@ class SCCU_Updates_Listing {
 	}
 }
 new SCCU_Updates_Listing();
-
-
-
-
-
-
-
-
-
-
-
-function sccu_relative_time( $from, $to = '', $limit = 1 ) {
-	$units = apply_filters( 'time_units', array(
-		31556926 => array( __( '%s year' ), __( '%s years' ) ),
-		2629744  => array( __( '%s month' ), __( '%s months' ) ),
-		604800   => array( __( '%s week' ), __( '%s weeks' ) ),
-		86400    => array( __( '%s day' ), __( '%s days' ) ),
-		3600     => array( __( '%s hour' ), __( '%s hours' ) ),
-		60       => array( __( '%s min' ), __( '%s mins' )
-	) ) );
-
-	$from      = (int) $from;
-	$to        = (int) $to;
-	$diff      = (int) abs( $to - $from );
-	$items     = 0;
-	$output    = array();
-	$seperator = _x( ', ', 'human_time_diff' );
-
-	if ( empty( $to ) )
-		$to = time();
-
-	foreach ( $units as $unitsec => $unitnames ) {
-		if ( $items >= $limit )
-			break;
-
-		if ( $diff < $unitsec )
-			continue;
-
-		$numthisunits = floor( $diff / $unitsec );
-		$diff = $diff - ( $numthisunits * $unitsec );
-
-		$items++;
-
-		if ( $numthisunits > 0 )
-			$output[] = sprintf( _n( $unitnames[0], $unitnames[1], $numthisunits ), $numthisunits );
-	}
-
-	if ( !empty( $output ) )
-		return implode( $seperator, $output );
-	else {
-		$smallest = array_pop( $units );
-
-		return sprintf( $smallest[0], 1 );
-	}
-}

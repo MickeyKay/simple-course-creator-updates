@@ -1,0 +1,10 @@
+@font-face {
+	font-family: "sccu-icons";
+	src: url("../fonts/sccu-icons.eot?9503089");
+	src: url("../fonts/sccu-icons.eot?9503089#iefix") format("embedded-opentype"),
+		 url("../fonts/sccu-icons.woff?9503089") format("woff"),
+		 url("../fonts/sccu-icons.ttf?9503089") format("truetype"),
+		 url("../fonts/sccu-icons.svg?9503089#sccu-icons") format("svg");
+	font-style: normal;
+	font-weight: normal;
+}

@@ -1,20 +1,28 @@
 <div class="sccu-updates">
 
-	<?php foreach ( get_terms( 'course' ) as $course ) :
+	<?php
+	/**
+	 * To edit this templace, create a folder called "scc_templates" in the root of your
+	 * theme and COPY this file into it. It will override the plugin's template file.
+	 */
+
+	foreach ( get_terms( 'course' ) as $course ) :
 		$array              = get_option( 'taxonomy_' . $course->term_id );
 		$post_list_title    = $array['post_list_title'];
 		$course_description = term_description( $course->term_id, 'course' );
 
 		$posts = get_posts( array(
-			'post_type' => 'post',
-			'orderby'   => 'post_date',
-			'order'     => 'DSC',
-			'taxonomy'  => $course->taxonomy,
-			'term'      => $course->slug,
-			'nopaging'  => true,
+			'post_type'      => 'post',
+			'posts_per_page' => -1,
+			'orderby'        => 'post_date',
+			'order'          => 'DSC',
+			'taxonomy'       => $course->taxonomy,
+			'term'           => $course->slug
 		) );
 
-		// get date of first post and in $posts loop
+		$updates_count = count( $posts );
+
+		// get date of oldest post in $posts loop
 
 		$dates = array();
 
@@ -24,6 +32,8 @@
 
 		$since_date = date( 'F d, Y', strtotime( min( $dates ) ) );
 	?>
+
+		<!-- Update -->
 
 		<div class="sccu-update sccu-mb-double">
 
@@ -61,7 +71,7 @@
 
 			<div class="sccu-list-head">
 
-				<span class="sccu-head-updates"><?php echo count( $posts ) . __( ' updates since ', 'sccu' ) . $since_date; ?></span>
+				<span class="sccu-head-updates"><?php echo $updates_count . sprintf( __( ' %s since ', 'sccu' ), ( $updates_count > 1 ? 'updates' : 'update' ) ) . $since_date; ?></span>
 
 			</div>
 
@@ -77,7 +87,11 @@
 
 						<div class="sccu-list-byline sccu-mb-third">
 
-							<span class="sccu-list-byline-item sccu-list-byline-date"><i class="sccu-icon sccu-icon-clock"></i> <?php echo sccu_relative_time( get_the_time( 'U', $post->ID ), current_time( 'timestamp' ) ) . __( ' ago', 'kol' ); ?></span>
+							<!-- Date -->
+
+							<span class="sccu-list-byline-item sccu-list-byline-date"><i class="sccu-icon sccu-icon-clock"></i> <?php echo sccu_relative_date( get_the_time( 'U', $post->ID ), current_time( 'timestamp' ) ) . __( ' ago', 'sccu' ); ?></span>
+
+							<!-- Comments -->
 
 							<span class="sccu-list-byline-item sccu-list-byline-comments"><a href="<?php echo get_comments_link( $post->ID ); ?>"><i class="sccu-icon sccu-icon-comment"></i><?php echo get_comments_number( $post->ID ); ?></a></span>
 
@@ -99,13 +113,13 @@
 
 						<?php endif; ?>
 
-					</div>
+					</div> <!-- end .sccu-list-item -->
 
-				<?php endforeach; ?>
+				<?php endforeach; // end $posts loop ?>
 
-			</div>
+			</div> <!-- end .sccu-list -->
 
-		</div>
+		</div> <!-- end .sccu-update -->
 
 	<?php endforeach; ?>
 
