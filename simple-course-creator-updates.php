@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Simple Course Creator - Updates
- * Plugin URI: http://kolakube.com/sccu-updates/
- * Description: Use the SCC Updates addon to create a page that lists the newest posts from your courses in a timeline format.
+ * Plugin URI: http://kolakube.com/guides/scc-updates/
+ * Description: Use the SCC Updates addon to list the newest posts from your courses or stories in a timeline format.
  * Version: 1.0.0
  * Author: Alex Mangini
  * Author URI: http://kolakube.com/about/

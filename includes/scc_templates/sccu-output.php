@@ -41,6 +41,8 @@
 	
 			$since_date = date( 'F d, Y', strtotime( min( $dates ) ) );
 		}
+
+		$intro = isset( $atts['intro'] ) ? $atts['intro'] : '';
 	?>
 
 		<!-- Update -->
@@ -49,104 +51,112 @@
 
 			<!-- Intro -->
 
-			<div class="sccu-intro sccu-mb-single">
+			<?php if ( $intro != 'false' ) : ?>
 
-				<!-- Title -->
-
-				<?php if ( $post_list_title != '' ) : ?>
-
-					<h3 class="sccu-title"><?php echo $post_list_title; ?></h3>
+				<div class="sccu-intro sccu-mb-single">
 	
-				<?php else : ?>
-
-					<h3 class="sccu-title"><?php echo $course->name; ?></h3>
-
-				<?php endif; ?>
+					<!-- Title -->
 	
-				<!-- Description -->
+					<?php if ( $post_list_title != '' ) : ?>
 	
-				<?php if ( $course_description != '' ) : ?>
+						<h3 class="sccu-title"><?php echo $post_list_title; ?></h3>
+		
+					<?php else : ?>
+	
+						<h3 class="sccu-title"><?php echo $course->name; ?></h3>
+	
+					<?php endif; ?>
+		
+					<!-- Description -->
+		
+					<?php if ( $course_description != '' ) : ?>
+	
+						<div class="sccu-desc">
+	
+							<?php echo wpautop( $course_description ); ?>
+	
+						</div>
+	
+					<?php endif; ?>
+	
+				</div>
 
-					<div class="sccu-desc">
+			<?php endif; ?>
 
-						<?php echo wpautop( $course_description ); ?>
+			<div class="sccu-timeline">
 
-					</div>
-
-				<?php endif; ?>
-
-			</div>
-
-			<!-- List Head -->
-
-			<div class="sccu-list-head">
-
-				<?php if ( $updates_count != 0 ) : ?>
-
-					<span class="sccu-head-updates"><?php echo $updates_count . sprintf( __( ' %s since ', 'sccu' ), ( $updates_count > 1 ? 'updates' : 'update' ) ) . $since_date; ?></span>
-
-				<?php else : ?>
-
-					<span class="sccu-head-updates"><?php _e( 'No updates yet', 'sccu' ) ?></span>
-
-				<?php endif; ?>
-
-			</div>
-
-			<!-- List -->
-
-			<div class="sccu-list">
-
-				<?php if ( $posts ) : ?>
-					<?php foreach ( $posts as $post ) : ?>
+				<!-- List Head -->
+	
+				<div class="sccu-list-head">
+	
+					<?php if ( $updates_count != 0 ) : ?>
+	
+						<span class="sccu-head-updates"><?php echo $updates_count . sprintf( __( ' %s since ', 'sccu' ), ( $updates_count > 1 ? 'updates' : 'update' ) ) . $since_date; ?></span>
+	
+					<?php else : ?>
+	
+						<span class="sccu-head-updates"><?php _e( 'No updates yet', 'sccu' ) ?></span>
+	
+					<?php endif; ?>
+	
+				</div>
+	
+				<!-- List -->
+	
+				<div class="sccu-list">
+	
+					<?php if ( $posts ) : ?>
+						<?php foreach ( $posts as $post ) : ?>
+		
+							<div class="sccu-list-item">
+		
+								<!-- Byline -->
+		
+								<div class="sccu-list-byline sccu-mb-third">
+		
+									<!-- Date -->
+		
+									<span class="sccu-list-byline-item sccu-list-byline-date"><i class="sccu-icon sccu-icon-clock"></i> <?php echo sccu_relative_date( get_the_time( 'U', $post->ID ), current_time( 'timestamp' ) ) . __( ' ago', 'sccu' ); ?></span>
+		
+									<!-- Comments -->
+		
+									<span class="sccu-list-byline-item sccu-list-byline-comments"><a href="<?php echo get_comments_link( $post->ID ); ?>"><i class="sccu-icon sccu-icon-comment"></i><?php echo get_comments_number( $post->ID ); ?></a></span>
+		
+								</div>
+		
+								<!-- Title -->
+		
+								<p class="sccu-list-title sccu-mb-half"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo $post->post_title; ?></a></p>
+		
+								<!-- Excerpt -->
+		
+								<?php if ( $post->post_excerpt ) : ?>
+		
+									<div class="sccu-list-excerpt">
+		
+										<?php echo $post->post_excerpt; ?>
+		
+									</div>
+		
+								<?php endif; ?>
+		
+							</div> <!-- end .sccu-list-item -->
+		
+						<?php endforeach; // end $posts loop ?>
+	
+					<?php else : ?>
 	
 						<div class="sccu-list-item">
-	
-							<!-- Byline -->
-	
 							<div class="sccu-list-byline sccu-mb-third">
-	
-								<!-- Date -->
-	
-								<span class="sccu-list-byline-item sccu-list-byline-date"><i class="sccu-icon sccu-icon-clock"></i> <?php echo sccu_relative_date( get_the_time( 'U', $post->ID ), current_time( 'timestamp' ) ) . __( ' ago', 'sccu' ); ?></span>
-	
-								<!-- Comments -->
-	
-								<span class="sccu-list-byline-item sccu-list-byline-comments"><a href="<?php echo get_comments_link( $post->ID ); ?>"><i class="sccu-icon sccu-icon-comment"></i><?php echo get_comments_number( $post->ID ); ?></a></span>
-	
+								<?php _e( 'Updates are coming &mdash; check back here soon.', 'sccu' ); ?>
 							</div>
+						</div>	
 	
-							<!-- Title -->
+					<?php endif; ?>
 	
-							<p class="sccu-list-title sccu-mb-half"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo $post->post_title; ?></a></p>
-	
-							<!-- Excerpt -->
-	
-							<?php if ( $post->post_excerpt ) : ?>
-	
-								<div class="sccu-list-excerpt">
-	
-									<?php echo $post->post_excerpt; ?>
-	
-								</div>
-	
-							<?php endif; ?>
-	
-						</div> <!-- end .sccu-list-item -->
-	
-					<?php endforeach; // end $posts loop ?>
+				</div> <!-- end .sccu-list -->
 
-				<?php else : ?>
-
-					<div class="sccu-list-item">
-						<div class="sccu-list-byline sccu-mb-third">
-							<?php _e( 'Updates are coming &mdash; check back here soon.', 'sccu' ); ?>
-						</div>
-					</div>	
-
-				<?php endif; ?>
-
-			</div> <!-- end .sccu-list -->
+			</div> <!-- end .sccu-timeline -->
 
 		</div> <!-- end .sccu-update -->
 

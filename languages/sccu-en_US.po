@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Course Creator - Updates\n"
+"POT-Creation-Date: 2014-04-26 15:05-0600\n"
+"PO-Revision-Date: 2014-04-26 15:06-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/display/functions.php:11
+#, php-format
+msgid "%s year"
+msgstr ""
+
+#: includes/display/functions.php:11
+#, php-format
+msgid "%s years"
+msgstr ""
+
+#: includes/display/functions.php:12
+#, php-format
+msgid "%s month"
+msgstr ""
+
+#: includes/display/functions.php:12
+#, php-format
+msgid "%s months"
+msgstr ""
+
+#: includes/display/functions.php:13
+#, php-format
+msgid "%s week"
+msgstr ""
+
+#: includes/display/functions.php:13
+#, php-format
+msgid "%s weeks"
+msgstr ""
+
+#: includes/display/functions.php:14
+#, php-format
+msgid "%s day"
+msgstr ""
+
+#: includes/display/functions.php:14
+#, php-format
+msgid "%s days"
+msgstr ""
+
+#: includes/display/functions.php:15
+#, php-format
+msgid "%s hour"
+msgstr ""
+
+#: includes/display/functions.php:15
+#, php-format
+msgid "%s hours"
+msgstr ""
+
+#: includes/display/functions.php:16
+#, php-format
+msgid "%s min"
+msgstr ""
+
+#: includes/display/functions.php:16
+#, php-format
+msgid "%s mins"
+msgstr ""
+
+#: includes/display/functions.php:24
+msgctxt "human_time_diff"
+msgid ", "
+msgstr ""
+
+#: includes/scc_templates/sccu-output.php:94
+#, php-format
+msgid " %s since "
+msgstr ""
+
+#: includes/scc_templates/sccu-output.php:98
+msgid "No updates yet"
+msgstr ""
+
+#: includes/scc_templates/sccu-output.php:119
+msgid " ago"
+msgstr ""
+
+#: includes/scc_templates/sccu-output.php:151
+msgid "Updates are coming &mdash; check back here soon."
+msgstr ""
