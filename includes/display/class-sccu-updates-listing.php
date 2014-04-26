@@ -105,8 +105,8 @@ class SCCU_Updates_Listing {
 	 */
 	public function shortcode( $atts ) {
 		extract( shortcode_atts( array(
-			'course' => '',
-			'intro'  => ''
+			'course'     => '',
+			'hide_empty' => true
 		), $atts ) );
 
 		ob_start();
