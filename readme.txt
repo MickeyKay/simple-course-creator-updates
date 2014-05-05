@@ -36,8 +36,10 @@ The same process applies to the course description, except you'd fill in the Des
 
 You can override the default styles the SCC Updates plugin outputs by following these simple steps:
 
+NOTE: It is highly encouraged you only make these changes using a child theme. If you use a parent theme, and then update it, you will lose all customizations you made with this plugin. Read more about child themes: http://codex.wordpress.org/Child_Themes
+
 * Via FTP, open the `simple-course-creator-updates` plugin file and browse to `includes/scc_templates` and open the `sccu.css` file
-* Now, copy the entire file and go to your parent/child theme root folder (the same folder `style.css` is in)
+* Now, copy the entire file and go to your child theme root folder (the same folder `style.css` is in)
 * Unless you've already created it, create a new folder called `scc_templates`
 * Inside the `scc_templates` folder, create a `sccu.css` file.
 * Paste in the CSS, and you can now freely make changes to the appearance of SCC Updates!
@@ -46,8 +48,10 @@ You can override the default styles the SCC Updates plugin outputs by following 
 
 You have complete customization control of not just the way SCC Updates looks, but also how it functions. Following a nearly identical process as above, editing the template file can be done by following these simple steps:
 
+NOTE: It is highly encouraged you only make these changes using a child theme. If you use a parent theme, and then update it, you will lose all customizations you made with this plugin. Read more about child themes: http://codex.wordpress.org/Child_Themes
+
 * Via FTP, open the `simple-course-creator-updates` plugin file and browse to `includes/scc_templates` and open the `sccu-output.php` file
-* Now, copy the entire file and go to your parent/child theme root folder (the same folder `style.css` is in)
+* Now, copy the entire file and go to your child theme root folder (the same folder `style.css` is in)
 * Unless you've already created it, create a new folder called `scc_templates`
 * Inside the `scc_templates` folder, create a `sccu-output.php` file.
 * Paste in the template code, and you can now freely make changes to the functionality of SCC Updates!
