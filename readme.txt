@@ -58,7 +58,7 @@ NOTE: It is highly encouraged you only make these changes using a child theme. I
 
 == Screenshots ==
 
-1. course output with timeline
+1. What the timeline looks like with posts added to a course
 
 == Changelog ==
 
